@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RefreshNewClothes</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logon">登录界面</string>
+    <string name="login">注册界面</string>
+    <string name="main">主界面</string>
+    <string name="recommendNews">此处显示该文章的标题 --- 这是官方推荐的文章或活动信息 标题最多显示两行，超出部分在结尾处以 ...</string>
+    <string name="longText">漫威首部黑人超级英雄电影《黑豹》上映首周，在全球收获了3.61亿美元的惊人成绩，登顶全球周末票房榜首。其中，北美市场首周拿下1.92亿美元，海外市场首周则为1.69亿美元。</string>
+    <string name="longlongText">漫威首部黑人超级英雄电影《黑豹》上映首周，在全球收获了3.61亿美元的惊人成绩，登顶全球周末票房榜首。其中，北美市场首周拿下1.92亿美元，海外市场首周则为1.69亿美元。《黑豹》在韩国、英国、墨西哥、澳大利亚等地都成绩亮眼，有望成为“漫威电影宇宙”继《复仇者联盟》、《钢铁侠3》、《复仇者联盟2》、《美国队长3》后又一部全球票房破10亿美元的影片。该片将于3月9日登陆中国内地。</string>
+
+</resources>

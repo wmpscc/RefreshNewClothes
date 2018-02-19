@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.youth.banner.Banner
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_pager_banner"
+        android:layout_width="match_parent"
+        android:layout_height="500px" />
+
+    <ImageButton
+        android:id="@+id/ib_search_home_pager"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="940px"
+        android:src="@drawable/ic_search"
+        android:layout_width="90px"
+        android:layout_height="90px"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>

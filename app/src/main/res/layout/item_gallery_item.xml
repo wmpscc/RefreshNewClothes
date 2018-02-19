@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:text="设计师作品"
+        android:id="@+id/tv_gallery_tip"
+        android:textSize="16sp"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="5px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_gallery"
+        android:layout_below="@+id/tv_gallery_tip"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="LinearLayoutManager">
+
+    </android.support.v7.widget.RecyclerView>
+</com.zhy.autolayout.AutoRelativeLayout>

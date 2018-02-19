@@ -1,0 +1,78 @@
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="550px">
+
+    <ImageView
+        android:id="@+id/iv_user_photo_display"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_user_photo_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <TextView
+        android:layout_marginTop="5px"
+        android:layout_below="@+id/iv_user_photo_display"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:text="Your Name"
+        android:id="@+id/tv_user_name_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_below="@+id/tv_user_name_display"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="16sp"
+            android:text="这里显示用户的评价，仅仅显示一句话"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:text=" 关注 "
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:id="@+id/thr_focus"
+        android:layout_marginTop="400px"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_show_deals"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_below="@id/thr_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20px"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_marginRight="5px"
+            android:padding="1px"
+            android:src="@drawable/banner_white_radius"/>
+
+        <ImageView
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_marginRight="5px"
+            android:padding="1px"
+            android:src="@drawable/banner_white_radius"/>
+
+        <ImageView
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_marginRight="5px"
+            android:padding="1px"
+            android:src="@drawable/banner_gray_radius"/>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

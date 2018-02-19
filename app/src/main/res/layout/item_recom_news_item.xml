@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/iv_recommended_news_picture"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_test_banner01"
+        android:layout_width="match_parent"
+        android:layout_height="480px"/>
+    <TextView
+        android:layout_marginTop="10px"
+        android:padding="5dp"
+        android:textSize="44px"
+        android:text="@string/recommendNews"
+        android:id="@+id/tv_recommended_news_content"
+        android:layout_below="@id/iv_recommended_news_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>
