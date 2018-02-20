@@ -1,13 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.wmpscc.refreshnewclothes.MainFragment.DesignerFragment">
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wmpscc.refreshnewclothes.MainFragment.DesignerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/designer_magic_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/designer_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_below="@id/designer_magic_indicator"/>
 
-</FrameLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

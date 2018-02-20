@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wmpscc.refreshnewclothes.AutoCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="5dp">
+
+        <com.wmpscc.refreshnewclothes.AdImageView
+            android:id="@+id/iv_designer_card_photo"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_big_picture"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_designer_card_user_photo"
+            android:layout_marginTop="80px"
+            android:alpha="0.4"
+            android:background="#000000"/>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_designer_card_user_photo"
+            android:layout_marginTop="400px"
+            android:layout_centerHorizontal="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_boy_photo"
+            app:riv_border_color="@color/colorOrange"
+            app:riv_border_width="0dip"
+            app:riv_corner_radius="20dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"/>
+
+        <TextView
+            android:id="@+id/tv_designer_card_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_designer_card_user_photo"
+            android:layout_centerHorizontal="true"
+            android:text="isYourName"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_designer_user_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_designer_card_user_name"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.8"
+            android:text="在校学生"
+            android:textColor="#ffffff"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/bt_designer_card_focus"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@id/tv_designer_user_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px"
+            android:background="@drawable/card_button_background"
+            android:text="关注"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.wmpscc.refreshnewclothes.AutoCardView>

@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 
 import com.wmpscc.refreshnewclothes.Item.MessageFrameItem;
 import com.wmpscc.refreshnewclothes.R;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -55,6 +56,8 @@ public class MessageFrameItemViewBinder extends ItemViewBinder<MessageFrameItem,
 
         ViewHolder(View itemView) {
             super(itemView);
+            AutoUtils.autoSize(itemView);
+
         }
     }
 }
