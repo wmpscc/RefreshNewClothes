@@ -1,4 +1,4 @@
-package com.wmpscc.refreshnewclothes;
+package com.wmpscc.refreshnewclothes.Utils;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

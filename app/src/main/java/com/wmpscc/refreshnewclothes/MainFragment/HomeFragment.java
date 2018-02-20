@@ -11,14 +11,14 @@ import com.wmpscc.refreshnewclothes.Item.GalleryItem;
 import com.wmpscc.refreshnewclothes.Binder.GalleryItemViewBinder;
 import com.wmpscc.refreshnewclothes.Item.BannerItem;
 import com.wmpscc.refreshnewclothes.Binder.BannerItemViewBinder;
-import com.wmpscc.refreshnewclothes.Label;
-import com.wmpscc.refreshnewclothes.LabelViewBinder;
+import com.wmpscc.refreshnewclothes.Item.Label;
+import com.wmpscc.refreshnewclothes.Binder.LabelViewBinder;
 import com.wmpscc.refreshnewclothes.R;
 import com.wmpscc.refreshnewclothes.Item.ShowDealsItem;
 import com.wmpscc.refreshnewclothes.Binder.ShowDealsItemViewBinder;
 import com.wmpscc.refreshnewclothes.Item.RecomNewsItem;
 import com.wmpscc.refreshnewclothes.Binder.RecomNewsItemViewBinder;
-import com.wmpscc.refreshnewclothes.SpacesItemDecoration;
+import com.wmpscc.refreshnewclothes.Utils.SpacesItemDecoration;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -74,7 +74,9 @@ public class HomeFragment extends Fragment {
 
         mItems = new Items();
         mItems.add(new BannerItem());
+        mItems.add(new Label("设计师作品"));
         mItems.add(new GalleryItem());
+        mItems.add(new Label("成交作品展示"));
         mItems.add(new ShowDealsItem());
         mItems.add(new RecomNewsItem());
 

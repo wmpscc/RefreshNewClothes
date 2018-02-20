@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/message_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_message_user_photo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="10px"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_boy_photo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@+id/iv_message_user_photo"
+            android:text="设计师名字"
+            android:textSize="16sp"
+            android:textStyle="normal"/>
+
+        <ImageButton
+            android:id="@+id/ib_message_drag_menu"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20px"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_triangle"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoFrameLayout
+        android:id="@+id/message_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_layout_top"
+        android:layout_marginTop="10px"
+        android:padding="10dp">
+
+        <!--<include layout="@layout/cell_message_text"/>-->
+        <!--<include layout="@layout/cell_message_picture"/>-->
+        <!--<include layout="@layout/cell_message_text_picture"/>-->
+
+    </com.zhy.autolayout.AutoFrameLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_container"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:alpha="0.2"
+            android:text="1 小时前发布"
+            android:textColor="#000000"
+            android:textSize="14sp"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_message_zan"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50px"
+                android:alpha="0.6"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_zan"/>
+
+            <ImageButton
+                android:id="@+id/ib_message_comment"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50px"
+                android:alpha="0.6"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_comment"/>
+
+            <ImageButton
+                android:id="@+id/ib_message_share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:alpha="0.6"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_share"/>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

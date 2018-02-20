@@ -30,6 +30,21 @@
             android:textAlignment="center"
             android:textColor="#ffffff"/>
 
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_commodity_designer_photo"
+            android:layout_marginBottom="35px"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/tv_commodity_name"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_boy_photo"
+            app:riv_border_color="@color/colorOrange"
+            app:riv_border_width="1dip"
+            app:riv_corner_radius="20dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 </com.wmpscc.refreshnewclothes.AutoCardView>

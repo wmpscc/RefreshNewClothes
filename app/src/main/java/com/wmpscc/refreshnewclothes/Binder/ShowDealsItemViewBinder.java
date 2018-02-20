@@ -1,6 +1,8 @@
 package com.wmpscc.refreshnewclothes.Binder;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +18,13 @@ import com.wmpscc.refreshnewclothes.R;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.zhy.autolayout.utils.AutoUtils;
 
+import net.lucode.hackware.magicindicator.MagicIndicator;
+import net.lucode.hackware.magicindicator.ViewPagerHelper;
+import net.lucode.hackware.magicindicator.buildins.circlenavigator.CircleNavigator;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import me.drakeet.multitype.ItemViewBinder;
 
 /**
@@ -24,6 +33,7 @@ import me.drakeet.multitype.ItemViewBinder;
 public class ShowDealsItemViewBinder extends ItemViewBinder<ShowDealsItem, ShowDealsItemViewBinder.ViewHolder> {
     private View root;
     private ViewPager mViewPager;
+    private List<Fragment> mFragments = new ArrayList<>();
     @NonNull
     @Override
     protected ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
@@ -38,10 +48,10 @@ public class ShowDealsItemViewBinder extends ItemViewBinder<ShowDealsItem, ShowD
     private void initViewPager(){
         StaticData staticData = new StaticData();
         mViewPager = root.findViewById(R.id.show_deals_viewpager);
-        ShowDealsViewPagerAdapter adapter = new ShowDealsViewPagerAdapter(staticData.fm);
-        adapter.addFragment(new DisplayFirstBannerFragment());
-        adapter.addFragment(new DisplaySecondBannerFragment());
-        adapter.addFragment(new DisplayThirdBannerFragment());
+        mFragments.add(new DisplayFirstBannerFragment());
+        mFragments.add(new DisplaySecondBannerFragment());
+        mFragments.add(new DisplayThirdBannerFragment());
+        ShowDealsViewPagerAdapter adapter = new ShowDealsViewPagerAdapter(staticData.fm, mFragments);
         mViewPager.setAdapter(adapter);
     }
 

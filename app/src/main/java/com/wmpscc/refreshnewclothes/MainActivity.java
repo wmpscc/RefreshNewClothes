@@ -13,13 +13,22 @@ import com.wmpscc.refreshnewclothes.MainFragment.ExploreFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.HomeFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.MineFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements CustomTabView.OnTabCheckListener {
     private CustomTabView mCustomTabView;
+    private List<Fragment> mFragments = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         StaticData.fm = getSupportFragmentManager();
+        mFragments.add(new HomeFragment());
+        mFragments.add(new ExploreFragment());
+        mFragments.add(new DesignerFragment());
+        mFragments.add(new MineFragment());
         initView();
     }
 
@@ -58,29 +67,28 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
 
     @Override
     public void onTabSelected(View v, int position) {
-        Log.e("zhouwei","position:"+position);
+        Log.e("zhouwei", "position:" + position);
         onTabItemSelected(position);
     }
 
-    private void onTabItemSelected(int position){
+    private void onTabItemSelected(int position) {
         Fragment fragment = null;
-        switch (position){
+        switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                fragment = mFragments.get(0);
                 break;
             case 1:
-                fragment = new ExploreFragment();
+                fragment = mFragments.get(1);
                 break;
-
             case 2:
-                fragment = new DesignerFragment();
+                fragment = mFragments.get(2);
                 break;
             case 3:
-                fragment = new MineFragment();
+                fragment = mFragments.get(3);
                 break;
         }
-        if(fragment!=null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.home_container,fragment).commit();
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.home_container, fragment).show(fragment).commit();
         }
     }
 }

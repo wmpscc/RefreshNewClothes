@@ -1,4 +1,4 @@
-package com.wmpscc.refreshnewclothes;
+package com.wmpscc.refreshnewclothes.Utils;
 
 import android.content.Context;
 import android.widget.ImageView;

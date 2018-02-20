@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wmpscc.refreshnewclothes.GlideImageLoader;
+import com.wmpscc.refreshnewclothes.Utils.GlideImageLoader;
 import com.wmpscc.refreshnewclothes.Item.BannerItem;
 import com.wmpscc.refreshnewclothes.R;
 import com.youth.banner.Banner;
