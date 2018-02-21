@@ -4,23 +4,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.wmpscc.refreshnewclothes.AdImageView;
-import com.wmpscc.refreshnewclothes.Binder.BannerItemViewBinder;
 import com.wmpscc.refreshnewclothes.Binder.DesignerInfoCardItemViewBinder;
-import com.wmpscc.refreshnewclothes.Binder.GalleryItemViewBinder;
-import com.wmpscc.refreshnewclothes.Binder.LabelViewBinder;
-import com.wmpscc.refreshnewclothes.Binder.RecomNewsItemViewBinder;
-import com.wmpscc.refreshnewclothes.Binder.ShowDealsItemViewBinder;
-import com.wmpscc.refreshnewclothes.Item.BannerItem;
 import com.wmpscc.refreshnewclothes.Item.DesignerInfoCardItem;
-import com.wmpscc.refreshnewclothes.Item.GalleryItem;
-import com.wmpscc.refreshnewclothes.Item.Label;
-import com.wmpscc.refreshnewclothes.Item.RecomNewsItem;
-import com.wmpscc.refreshnewclothes.Item.ShowDealsItem;
 import com.wmpscc.refreshnewclothes.R;
 import com.wmpscc.refreshnewclothes.Utils.SpacesItemDecoration;
 
@@ -61,6 +54,12 @@ public class DesignerRecommendFragment extends Fragment {
         return mView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
     private void initView() {
         mRecyclerView = mView.findViewById(R.id.rv_designer_recommend);
         mRecyclerView.addItemDecoration(new SpacesItemDecoration(20));
@@ -72,14 +71,21 @@ public class DesignerRecommendFragment extends Fragment {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 int fPos = mLinearLayoutManager.findFirstVisibleItemPosition();
-                int lPos = mLinearLayoutManager.findLastCompletelyVisibleItemPosition();
+                int lPos = mLinearLayoutManager.findLastVisibleItemPosition();
                 for (int i = fPos; i <= lPos; i++) {
                     View view = mLinearLayoutManager.findViewByPosition(i);
                     AdImageView adImageView = view.findViewById(R.id.iv_designer_card_photo);
                     if (adImageView.getVisibility() == View.VISIBLE) {
-                        adImageView.setDx(mLinearLayoutManager.getHeight() - view.getTop());
+                        adImageView.setDy(mLinearLayoutManager.getHeight() - view.getTop());
                     }
                 }
+
+            }
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
 
             }
         });

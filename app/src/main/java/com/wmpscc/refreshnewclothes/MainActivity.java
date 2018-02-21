@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.CustomTabView.CustomTabView;
 import com.wmpscc.refreshnewclothes.MainFragment.DesignerFragment;

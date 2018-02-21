@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.wmpscc.refreshnewclothes.AdImageView
+        android:id="@+id/iv_designer_info_background_photo"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="matrix"
+        android:src="@drawable/ic_designer_background01"/>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_designer_info_user_photo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/tv_designer_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_user_boy_photo"
+        app:riv_border_color="@color/colorOrange"
+        app:riv_border_width="0dip"
+        app:riv_corner_radius="20dip"
+        app:riv_mutate_background="true"
+        app:riv_oval="true"/>
+
+    <TextView
+        android:id="@+id/tv_designer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_designer_info_background_photo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:alpha="0.7"
+        android:text="isYourName"
+        android:textColor="#000000"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_designer_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_designer_name"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.5"
+        android:text="专业设计师"/>
+
+    <ImageView
+        android:id="@+id/iv_designer_label_pic"
+        android:layout_width="20dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="20px"
+        android:layout_below="@+id/tv_designer_type"
+        android:layout_marginLeft="25px"
+        android:src="@drawable/ic_label"/>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_designer_type"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="20px"
+        android:layout_toRightOf="@+id/iv_designer_label_pic"
+        android:alpha="0.5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/designer_label"
+            android:text="文艺"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/designer_label"
+            android:text="清新"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/designer_label"
+            android:text="独立设计师"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/designer_label"
+            android:text="在校学生"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/designer_label"
+            android:text="专业"/>
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_designer_label_2_pic"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/iv_designer_label_pic"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="25px"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_see"/>
+
+    <Button
+        android:id="@+id/bt_designer_info_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_alignBottom="@+id/iv_designer_label_2_pic"
+        android:background="@drawable/card_button_background"
+        android:text="关注"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ffffff"
+        android:textSize="14sp"/>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

@@ -9,21 +9,23 @@
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:padding="5dp">
 
         <com.wmpscc.refreshnewclothes.AdImageView
             android:id="@+id/iv_designer_card_photo"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_big_picture"/>
-
+            android:scaleType="matrix"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_empty"/>
+<!--//300dp-->
         <View
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/iv_designer_card_user_photo"
             android:layout_marginTop="80px"
+            android:layout_alignBottom="@+id/iv_designer_card_photo"
             android:alpha="0.4"
             android:background="#000000"/>
 

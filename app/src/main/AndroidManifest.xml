@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.wmpscc.refreshnewclothes">
+
     <!-- if you want to load images from the internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -31,6 +32,8 @@
             android:value="1920">
         </meta-data>
 
+        <activity android:name=".DesignerInfoActivity">
+        </activity>
     </application>
 
 </manifest>
