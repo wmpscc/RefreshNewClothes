@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wmpscc.refreshnewclothes.Binder.DesignerTransationInfoItemViewBinder;
+import com.wmpscc.refreshnewclothes.Item.DesignerTransationInfoItem;
 import com.wmpscc.refreshnewclothes.Item.GalleryItem;
 import com.wmpscc.refreshnewclothes.Binder.GalleryItemViewBinder;
 import com.wmpscc.refreshnewclothes.Item.BannerItem;

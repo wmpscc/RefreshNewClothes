@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wmpscc.refreshnewclothes.Adapter.DealsViewPagerAdapter;
 import com.wmpscc.refreshnewclothes.Adapter.MagicPagerAdapter;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.Fragment.DesignerBelowLeftFragment;
