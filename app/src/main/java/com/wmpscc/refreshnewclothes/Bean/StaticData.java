@@ -8,4 +8,5 @@ import android.support.v4.app.FragmentManager;
 
 public class StaticData {
     public static FragmentManager fm;
+    public static FragmentManager desigerFm;
 }

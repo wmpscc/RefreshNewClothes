@@ -133,5 +133,11 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
 }
 dependencies {
+    implementation 'com.android.support:support-v4:27.+'
+}
+dependencies {
+    implementation 'com.android.support:support-v4:27.+'
+}
+dependencies {
     implementation 'com.hymane.expandtextview:library:1.0.2'
 }
