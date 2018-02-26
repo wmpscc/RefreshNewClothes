@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".Activity.SearchActivity">
         </activity>
+        <activity android:name=".DealListActivity">
+        </activity>
     </application>
 
 </manifest>
