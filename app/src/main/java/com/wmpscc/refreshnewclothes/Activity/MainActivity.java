@@ -1,4 +1,4 @@
-package com.wmpscc.refreshnewclothes;
+package com.wmpscc.refreshnewclothes.Activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import com.wmpscc.refreshnewclothes.MainFragment.DesignerFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.ExploreFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.HomeFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.MineFragment;
+import com.wmpscc.refreshnewclothes.R;
 
 import java.util.ArrayList;
 import java.util.List;

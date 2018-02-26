@@ -2,6 +2,7 @@ package com.wmpscc.refreshnewclothes.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,8 @@ import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.Item.DesignerTransationInfoItem;
 import com.wmpscc.refreshnewclothes.Binder.DesignerTransationInfoItemViewBinder;
 import com.wmpscc.refreshnewclothes.R;
+
+import java.util.zip.Inflater;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -55,10 +58,19 @@ public class DesignerBelowLeftFragment extends Fragment {
 
     private void initRecycleItem(){
         mAdapter = new MultiTypeAdapter();
-        mAdapter.register(DesignerTransationInfoItem.class, new DesignerTransationInfoItemViewBinder());
+        FragmentManager fm = getChildFragmentManager();
+        mAdapter.register(DesignerTransationInfoItem.class, new DesignerTransationInfoItemViewBinder(fm));
         mRecyclerView.setAdapter(mAdapter);
 
         mItems = new Items();
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
+        mItems.add(new DesignerTransationInfoItem());
         mItems.add(new DesignerTransationInfoItem());
         mItems.add(new DesignerTransationInfoItem());
         mItems.add(new DesignerTransationInfoItem());
@@ -68,5 +80,6 @@ public class DesignerBelowLeftFragment extends Fragment {
         mAdapter.setItems(mItems);
         mAdapter.notifyDataSetChanged();
     }
+
 
 }

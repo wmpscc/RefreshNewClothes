@@ -1,17 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             tools:context="com.wmpscc.refreshnewclothes.Fragment.DesignerBelowLeftFragment">
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wmpscc.refreshnewclothes.Fragment.DesignerBelowLeftFragment">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_designer_deal_record"
-        android:orientation="vertical"
-        app:layoutManager="LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager">
 
 
     </android.support.v7.widget.RecyclerView>
 
-</FrameLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

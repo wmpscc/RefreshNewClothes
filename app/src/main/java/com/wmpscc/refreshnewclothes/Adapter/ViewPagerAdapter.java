@@ -3,34 +3,32 @@ package com.wmpscc.refreshnewclothes.Adapter;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wmpscc.refreshnewclothes.Bean.StaticData;
-import com.wmpscc.refreshnewclothes.R;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 /**
- * Created by wmpscc on 2018/2/22.
+ * Created by wmpscc on 2018/2/23.
  */
 
-public class DealsViewPagerAdapter extends PagerAdapter {
-    private List<Fragment> mFragments = new ArrayList<>();
+public class ViewPagerAdapter extends PagerAdapter {
     private List<View> mViews = new ArrayList<>();
 
-    public void addFragment(Fragment fragment) {
-        mFragments.add(fragment);
+    public void addView(View view){
+        mViews.add(view);
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         container.addView(mViews.get(position));
-        return mFragments.get(position);
+        return mViews.get(position);
     }
 
     @Override
@@ -48,3 +46,4 @@ public class DealsViewPagerAdapter extends PagerAdapter {
         return view == object;
     }
 }
+

@@ -1,37 +1,41 @@
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="200dp"
-             tools:context="com.wmpscc.refreshnewclothes.Fragment.DesignerDealDisplayFragment">
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/arlayout"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    tools:context="com.wmpscc.refreshnewclothes.Fragment.DesignerDealDisplayFragment">
+
     <ImageView
         android:id="@+id/iv_designer_deal_photo"
-        android:src="@drawable/ic_picture01"
-        android:scaleType="centerCrop"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_picture01"/>
 
     <TextView
         android:id="@+id/tv_reform_display_left_label"
         android:layout_width="23dp"
         android:layout_height="23dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8px"
+        android:layout_marginLeft="5px"
         android:background="@drawable/reform_display_left_background"
         android:text="前"
-        android:layout_marginLeft="5px"
-        android:layout_marginBottom="8px"
-        android:layout_alignParentBottom="true"
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="13dp"/>
+
     <TextView
-        android:text="长袖改为短袖"
-        android:textColor="#ffffff"
-        android:textSize="14sp"
-        android:background="@drawable/reform_display_cent_background"
-        android:layout_marginBottom="50px"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:id="@+id/tv_reform_display_cent_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50px"
+        android:background="@drawable/reform_display_cent_background"
+        android:text="长袖改为短袖"
+        android:textColor="#ffffff"
+        android:textSize="14sp"/>
 
 </com.zhy.autolayout.AutoRelativeLayout>

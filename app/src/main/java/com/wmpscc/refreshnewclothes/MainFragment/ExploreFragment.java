@@ -1,6 +1,7 @@
 package com.wmpscc.refreshnewclothes.MainFragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,9 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageButton;
 
 import com.wmpscc.refreshnewclothes.Adapter.MagicPagerAdapter;
-import com.wmpscc.refreshnewclothes.Bean.StaticData;
+import com.wmpscc.refreshnewclothes.Activity.SearchActivity;
 import com.wmpscc.refreshnewclothes.Utils.ColorFlipPagerTitleView;
 import com.wmpscc.refreshnewclothes.Fragment.ExploreFirstFragment;
 import com.wmpscc.refreshnewclothes.Fragment.ExploreSecondFragment;
@@ -37,6 +39,7 @@ public class ExploreFragment extends Fragment {
     private View view;
     private List<String> mTitleDataList = new ArrayList<>();
     private ViewPager mViewPager;
+    private ImageButton searchButton;
 
     public ExploreFragment() {
         // Required empty public constructor
@@ -65,7 +68,18 @@ public class ExploreFragment extends Fragment {
         Log.e("ss", "onCreat");
         initViewPager();
         initMagicIndicator();
+        initView();
         return view;
+    }
+
+    private void initView(){
+        searchButton = view.findViewById(R.id.ib_explore_search);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchActivity.class));
+            }
+        });
     }
 
     private void initViewPager() {

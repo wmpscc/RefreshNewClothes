@@ -2,8 +2,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.wmpscc.refreshnewclothes.Fragment.SearchReformFragment">
+    <!--<TextView-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="20sp"-->
+        <!--android:text="测试测试"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <com.wmpscc.refreshnewclothes.DesignerDealCustomInfoView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.wmpscc.refreshnewclothes.DesignerDealCustomInfoView>
 
 
 

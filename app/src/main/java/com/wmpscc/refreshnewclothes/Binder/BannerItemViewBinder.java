@@ -1,11 +1,14 @@
 package com.wmpscc.refreshnewclothes.Binder;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
+import com.wmpscc.refreshnewclothes.Activity.SearchActivity;
 import com.wmpscc.refreshnewclothes.Utils.GlideImageLoader;
 import com.wmpscc.refreshnewclothes.Item.BannerItem;
 import com.wmpscc.refreshnewclothes.R;
@@ -23,6 +26,7 @@ import me.drakeet.multitype.ItemViewBinder;
  * Created by wmpscc on 2018/2/19.
  */
 public class BannerItemViewBinder extends ItemViewBinder<BannerItem, BannerItemViewBinder.ViewHolder> {
+    private ImageButton searchButton;
     private Banner mBanner;
     private View root;
     private List<String> imgUrl = new ArrayList<>();
@@ -38,7 +42,18 @@ public class BannerItemViewBinder extends ItemViewBinder<BannerItem, BannerItemV
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull BannerItem bannerItem) {
         initBanner();
+        initView();
     }
+    private void initView(){
+        searchButton = root.findViewById(R.id.ib_search_home_pager);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                root.getContext().startActivity(new Intent(root.getContext(), SearchActivity.class));
+            }
+        });
+    }
+
     private void initBanner(){
         imgUrl.add("https://p1.pstatp.com/large/166200019850062839d3");
         imgUrl.add("http://ox5bam95j.bkt.clouddn.com/banner01.jpg");

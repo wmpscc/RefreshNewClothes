@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,7 @@ public class DesignerInfoBelowItemViewBinder extends ItemViewBinder<DesignerInfo
         mAdapter.addFragment(new DesignerBelowLeftFragment());
         mAdapter.addFragment(new DesignerBelowRightFragment());
         mViewPager.setAdapter(mAdapter);
-
+        Log.e("设置viewpagerAdapter", "end");
     }
     private void initMagicIndicator() {
         MagicIndicator magicIndicator = root.findViewById(R.id.magic_designer_info);

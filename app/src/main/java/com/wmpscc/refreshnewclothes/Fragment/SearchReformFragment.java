@@ -4,21 +4,25 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.R;
 
 
 public class SearchReformFragment extends Fragment {
+    private View mView;
 
     public SearchReformFragment() {
         // Required empty public constructor
+
     }
 
 
-    public static SearchReformFragment newInstance(String param1, String param2) {
+    public static SearchReformFragment newInstance() {
         SearchReformFragment fragment = new SearchReformFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -28,6 +32,7 @@ public class SearchReformFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("onCreate","end");
 
     }
 
@@ -35,7 +40,9 @@ public class SearchReformFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_reform, container, false);
+        Log.e("onCreateView", "end");
+        mView = inflater.inflate(R.layout.fragment_search_reform, container, false);
+        return mView;
     }
 
 }

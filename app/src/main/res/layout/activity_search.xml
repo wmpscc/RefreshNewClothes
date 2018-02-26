@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wmpscc.refreshnewclothes.Activity.SearchActivity">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/linear01"
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:layout_toLeftOf="@+id/bt_search"
+        android:background="@drawable/search_shape"
+        android:orientation="horizontal">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="10px"
+            android:layout_marginTop="3px">
+
+            <ImageView
+                android:id="@+id/ic01"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:alpha="0.6"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_search_black"/>
+
+            <EditText
+                android:id="@+id/ed_search_context"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:textSize="15sp"
+                android:background="@null"
+                android:layout_toRightOf="@+id/ic01"
+                android:hint="搜索改造、设计师、作品"/>
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <Button
+        android:id="@+id/bt_search"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10px"
+        android:background="@null"
+        android:text="搜索"
+        android:textColor="#767676"
+        android:textSize="16sp"/>
+    <View
+        android:layout_marginTop="3dp"
+        android:id="@+id/line01"
+        android:layout_below="@+id/linear01"
+        android:background="#dadada"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_below="@+id/line01"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager">
+
+    </android.support.v7.widget.RecyclerView>
+
+</com.zhy.autolayout.AutoRelativeLayout>
