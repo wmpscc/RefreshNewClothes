@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="com.wmpscc.refreshnewclothes.Activity.KuaiDiInfoActivity">
+
+    <TextView
+        android:id="@+id/label01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="承运商"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_express_deliver_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_toRightOf="@id/label01"
+        android:text="中通快递"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/label02"
+        android:layout_marginTop="20px"
+        android:layout_below="@id/label01"
+        android:text="快递单号"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:layout_marginLeft="20px"
+        android:text="000000000011"
+        android:layout_toRightOf="@+id/label02"
+        android:layout_alignBottom="@id/label02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>
