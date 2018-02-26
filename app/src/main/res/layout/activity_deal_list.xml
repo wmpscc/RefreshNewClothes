@@ -5,7 +5,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wmpscc.refreshnewclothes.DealListActivity">
+    tools:context="com.wmpscc.refreshnewclothes.Activity.DealListActivity">
 
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/layout01"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_triangle_left"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="我的订单"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:background="#cecece"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_deal_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout01"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager">
+
+    </android.support.v7.widget.RecyclerView>
 
 </com.zhy.autolayout.AutoRelativeLayout>
