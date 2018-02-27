@@ -1,21 +1,22 @@
 package com.wmpscc.refreshnewclothes.Binder;
 
 import android.content.Intent;
+import android.support.annotation.BoolRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.wmpscc.refreshnewclothes.Activity.DealListActivity;
 import com.wmpscc.refreshnewclothes.Item.MineTopInfoItem;
-import com.wmpscc.refreshnewclothes.MessageListActivity;
-import com.wmpscc.refreshnewclothes.MessageListItem;
+import com.wmpscc.refreshnewclothes.Activity.MessageListActivity;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Activity.SettingActivity;
+import com.wmpscc.refreshnewclothes.UserBaseInfoActivity;
 import com.zhy.autolayout.utils.AutoUtils;
-
-import org.w3c.dom.ProcessingInstruction;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -26,6 +27,9 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
     private TextView orderInfoTextView;
     private View root;
     private TextView messageInfoTextView;
+    private ImageButton settingButton;
+    private ImageButton edBaseButton;
+    private static View.OnClickListener mListener;
 
     @NonNull
     @Override
@@ -40,21 +44,36 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
 
     }
 
-    private void initView(){
+    private void initView() {
         orderInfoTextView = root.findViewById(R.id.tv_order);
         messageInfoTextView = root.findViewById(R.id.tv_message);
-        orderInfoTextView.setOnClickListener(new View.OnClickListener() {
+        settingButton = root.findViewById(R.id.ib_start_setting);
+        edBaseButton = root.findViewById(R.id.ib_edit_base_message);
+
+
+        mListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                root.getContext().startActivity(new Intent(root.getContext(), DealListActivity.class));
+                switch (view.getId()) {
+                    case R.id.tv_order:
+                        root.getContext().startActivity(new Intent(root.getContext(), DealListActivity.class));
+                        break;
+                    case R.id.tv_message:
+                        root.getContext().startActivity(new Intent(root.getContext(), MessageListActivity.class));
+                        break;
+                    case R.id.ib_start_setting:
+                        root.getContext().startActivity(new Intent(root.getContext(), SettingActivity.class));
+                        break;
+                    case R.id.ib_edit_base_message:
+                        root.getContext().startActivity(new Intent(root.getContext(), UserBaseInfoActivity.class));
+                        break;
+                }
             }
-        });
-        messageInfoTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                root.getContext().startActivity(new Intent(root.getContext(), MessageListActivity.class));
-            }
-        });
+        };
+        orderInfoTextView.setOnClickListener(mListener);
+        messageInfoTextView.setOnClickListener(mListener);
+        settingButton.setOnClickListener(mListener);
+        edBaseButton.setOnClickListener(mListener);
 
     }
 
@@ -66,4 +85,6 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
 
         }
     }
+
+
 }

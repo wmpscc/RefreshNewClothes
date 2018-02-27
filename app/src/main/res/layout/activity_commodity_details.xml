@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wmpscc.refreshnewclothes.Activity.CommodityDetailsActivity">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_commodity_photo"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_big_picture"/>
+
+        <com.hymane.expandtextview.ExpandTextView
+            android:id="@+id/etv_commodity_describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_commodity_photo"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            app:contentText="@string/longlongText"
+            app:contentTextSize="14sp"
+            app:expandHint="展开"
+            app:foldHint="收起"
+            app:indicateImage="@drawable/ic_keyboard_arrow_down_black_24dp"
+            app:textContentColor="#91000000"
+            app:textHintColor="#aa000000"
+            app:textTitleColor="?android:attr/textColorSecondary"
+            app:titleText="“ 商品描述 ”"
+            app:titleTextSize="20sp"/>
+
+        <TextView
+            android:id="@+id/label_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etv_commodity_describe"
+            android:paddingLeft="16dp"
+            android:text="“ 商品详情 ”"
+            android:textColor="#aa000000"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/iv_commodity_describe_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_01"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_big_picture"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</ScrollView>

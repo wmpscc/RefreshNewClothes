@@ -1,11 +1,12 @@
-package com.wmpscc.refreshnewclothes;
+package com.wmpscc.refreshnewclothes.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
-import com.wmpscc.refreshnewclothes.Binder.DealInfoItemViewBinder;
-import com.wmpscc.refreshnewclothes.Item.DealInfoItem;
+import com.wmpscc.refreshnewclothes.Item.MessageListItem;
+import com.wmpscc.refreshnewclothes.Binder.MessageListItemViewBinder;
+import com.wmpscc.refreshnewclothes.R;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;

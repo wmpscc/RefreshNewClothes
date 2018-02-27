@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wmpscc.refreshnewclothes.UserBaseInfoActivity">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/layout04"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_triangle_left"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="基本信息"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:background="#cecece"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_below="@+id/layout04"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/label_remind"
+            android:background="#eae6e6"
+            android:text="此处填写的信息将在发布订单时，提供给设计师，以提供更好的服务。同时我们将对您的隐私信息严格保密。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_base_user_photo"
+            android:layout_below="@+id/label_remind"
+            android:src="@drawable/ic_user_boy_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:riv_border_color="@color/colorOrange"
+            app:riv_border_width="0dip"
+            app:riv_corner_radius="20dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"/>
+        <EditText
+            android:id="@+id/ed_base_name"
+            android:layout_marginRight="80px"
+            android:layout_marginTop="50px"
+            android:layout_alignTop="@+id/iv_base_user_photo"
+            android:layout_toRightOf="@+id/iv_base_user_photo"
+            android:hint="昵称"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.zhy.autolayout.AutoLinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="50px"
+            android:layout_below="@+id/iv_base_user_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/ed_base_phone_number"
+                android:hint="手机号"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/ed_base_accept_address"
+                android:hint="收货地址"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/ed_base_height"
+                android:hint="身高"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/ed_base_weight"
+                android:hint="体重"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:background="#eae6e6"
+                android:layout_marginTop="20dp"
+                android:text="注意 若无特殊说明，将按标准身材进行改造。建议先与设计师洽谈后再提交订单。"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

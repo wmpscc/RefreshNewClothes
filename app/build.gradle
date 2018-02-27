@@ -157,5 +157,14 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
 }
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
     implementation 'com.hymane.expandtextview:library:1.0.2'
 }
