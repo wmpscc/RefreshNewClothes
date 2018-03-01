@@ -31,10 +31,13 @@ dependencies {
     implementation 'com.zhy:autolayout:1.4.5'
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.android.support:cardview-v7:27.0.2'
+    implementation 'com.qiniu:qiniu-android-sdk:7.3.+'
+    implementation 'com.qiniu:qiniu-java-sdk:7.1.+'
+    implementation 'com.alibaba:fastjson:1.1.68.android'
 }
 dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
-//    implementation project(':banner')
+    implementation project(':library') // 图片选择器
 }
 dependencies {
     implementation('me.drakeet.multitype:multitype:3.3.0', {

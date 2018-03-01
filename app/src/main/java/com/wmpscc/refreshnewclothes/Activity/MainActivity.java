@@ -1,12 +1,14 @@
 package com.wmpscc.refreshnewclothes.Activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.bumptech.glide.Glide;
+import com.alibaba.fastjson.JSON;
+import com.wmpscc.refreshnewclothes.Bean.Json_base_info;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.CustomTabView.CustomTabView;
 import com.wmpscc.refreshnewclothes.MainFragment.DesignerFragment;
@@ -14,7 +16,9 @@ import com.wmpscc.refreshnewclothes.MainFragment.ExploreFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.HomeFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.MineFragment;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.FileOperate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,13 +30,39 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (new Json_base_info().getCilentID() == null){
+            startActivity(new Intent(this, DealListActivity.class));
+        }
+
         StaticData.fm = getSupportFragmentManager();
         mFragments.add(new HomeFragment());
         mFragments.add(new ExploreFragment());
         mFragments.add(new DesignerFragment());
         mFragments.add(new MineFragment());
         initView();
+
     }
+
+    private void initFile() throws IOException {
+        String baseInfoPath = "/base_info.txt";
+        String baseInfoJson = "";
+        FileOperate fileOperate = new FileOperate();
+        if (fileOperate.hasFile(baseInfoPath)) {
+            baseInfoJson = fileOperate.readSDFile(baseInfoPath);
+            Log.e("content", baseInfoJson);
+            Json_base_info baseInfo = JSON.parseObject(baseInfoJson, Json_base_info.class);
+            Log.e("jsonread", baseInfo.getCilentID() + baseInfo.getUserName() + baseInfo.getPhotoUrl());
+        } else {
+            Json_base_info jsonBaseInfo = new Json_base_info();
+            jsonBaseInfo.setCilentID("1234567890x");
+            jsonBaseInfo.setPhotoUrl("http://p4sz2omtj.bkt.clouddn.com/FpLU3QJ5zSf9ktZv3yLvJQMoI-Ei");
+            jsonBaseInfo.setUserName("HEO");
+            fileOperate.writeSDFile(baseInfoPath, "" + JSON.toJSONString(jsonBaseInfo));
+
+        }
+
+    }
+
 
     private void initView() {
         mCustomTabView = findViewById(R.id.custom_tab_container);
