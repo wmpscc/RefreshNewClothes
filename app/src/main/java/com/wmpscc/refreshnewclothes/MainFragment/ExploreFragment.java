@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 
 import com.wmpscc.refreshnewclothes.Adapter.MagicPagerAdapter;
 import com.wmpscc.refreshnewclothes.Activity.SearchActivity;
+import com.wmpscc.refreshnewclothes.Bean.SecondFragmentBean.JSON_second_fragment;
 import com.wmpscc.refreshnewclothes.Utils.ColorFlipPagerTitleView;
 import com.wmpscc.refreshnewclothes.Fragment.ExploreFirstFragment;
 import com.wmpscc.refreshnewclothes.Fragment.ExploreSecondFragment;

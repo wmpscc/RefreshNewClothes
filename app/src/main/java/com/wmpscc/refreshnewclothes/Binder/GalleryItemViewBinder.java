@@ -6,10 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.CommodityArray;
 import com.wmpscc.refreshnewclothes.Item.GalleryCommodityItem;
 import com.wmpscc.refreshnewclothes.Item.GalleryItem;
 import com.wmpscc.refreshnewclothes.R;
 import com.zhy.autolayout.utils.AutoUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import me.drakeet.multitype.ItemViewBinder;
 import me.drakeet.multitype.Items;
@@ -23,6 +27,8 @@ public class GalleryItemViewBinder extends ItemViewBinder<GalleryItem, GalleryIt
     private RecyclerView mRecyclerView;
     private MultiTypeAdapter mAdapter;
     private Items mItems;
+    private List<CommodityArray> mCommodityArrays = new ArrayList<>();
+
 
     @NonNull
     @Override
@@ -33,26 +39,25 @@ public class GalleryItemViewBinder extends ItemViewBinder<GalleryItem, GalleryIt
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull GalleryItem galleryItem) {
+        mCommodityArrays = galleryItem.getCommodityArrays();
         initView();
         initRecycleItem();
     }
-    private void initView(){
+
+    private void initView() {
         mRecyclerView = root.findViewById(R.id.rv_gallery);
     }
 
-    private void initRecycleItem(){
+    private void initRecycleItem() {
         mAdapter = new MultiTypeAdapter();
         mAdapter.register(GalleryCommodityItem.class, new GalleryCommodityItemViewBinder());
 
         mRecyclerView.setAdapter(mAdapter);
 
         mItems = new Items();
-        mItems.add(new GalleryCommodityItem());
-        mItems.add(new GalleryCommodityItem());
-        mItems.add(new GalleryCommodityItem());
-        mItems.add(new GalleryCommodityItem());
-        mItems.add(new GalleryCommodityItem());
-
+        for (int i = 0; i < mCommodityArrays.size(); i++) {
+            mItems.add(new GalleryCommodityItem(mCommodityArrays.get(i)));
+        }
         mAdapter.setItems(mItems);
         mAdapter.notifyDataSetChanged();
 

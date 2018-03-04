@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wmpscc.refreshnewclothes.Adapter.ShowDealsViewPagerAdapter;
+import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.TradeShowArray;
 import com.wmpscc.refreshnewclothes.Fragment.DisplayFirstBannerFragment;
 import com.wmpscc.refreshnewclothes.Fragment.DisplaySecondBannerFragment;
 import com.wmpscc.refreshnewclothes.Fragment.DisplayThirdBannerFragment;
@@ -34,6 +35,8 @@ public class ShowDealsItemViewBinder extends ItemViewBinder<ShowDealsItem, ShowD
     private View root;
     private ViewPager mViewPager;
     private List<Fragment> mFragments = new ArrayList<>();
+    private TradeShowArray mTradeShowArray;
+
     @NonNull
     @Override
     protected ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
@@ -43,13 +46,14 @@ public class ShowDealsItemViewBinder extends ItemViewBinder<ShowDealsItem, ShowD
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull ShowDealsItem showDealsItem) {
+        mTradeShowArray = showDealsItem.getTradeShowArray();
         initViewPager();
     }
     private void initViewPager(){
         StaticData staticData = new StaticData();
         mViewPager = root.findViewById(R.id.show_deals_viewpager);
-        mFragments.add(new DisplayFirstBannerFragment());
-        mFragments.add(new DisplaySecondBannerFragment());
+        mFragments.add(DisplayFirstBannerFragment.newInstance(mTradeShowArray.getBeforeUrl()));
+        mFragments.add(DisplaySecondBannerFragment.newInstance(mTradeShowArray.getAfterUrl()));
         mFragments.add(new DisplayThirdBannerFragment());
         ShowDealsViewPagerAdapter adapter = new ShowDealsViewPagerAdapter(staticData.fm, mFragments);
         mViewPager.setAdapter(adapter);

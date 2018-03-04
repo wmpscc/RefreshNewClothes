@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.wmpscc.refreshnewclothes.Activity.DealListActivity;
+import com.wmpscc.refreshnewclothes.Bean.GlobalData;
 import com.wmpscc.refreshnewclothes.Item.MineTopInfoItem;
 import com.wmpscc.refreshnewclothes.Activity.MessageListActivity;
 import com.wmpscc.refreshnewclothes.R;
@@ -30,6 +33,8 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
     private ImageButton settingButton;
     private ImageButton edBaseButton;
     private static View.OnClickListener mListener;
+    private RoundedImageView userPhotoImageView;
+    private TextView userNameTextView;
 
     @NonNull
     @Override
@@ -41,10 +46,14 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull MineTopInfoItem mineTopInfoItem) {
-
+        userNameTextView.setText(GlobalData.sJson_base_info.getUserName());
+        Glide.with(root.getContext()).load(GlobalData.sJson_base_info.getPhotoUrl()).into(userPhotoImageView);
     }
 
     private void initView() {
+        userNameTextView = root.findViewById(R.id.tv_mine_name);
+        userPhotoImageView = root.findViewById(R.id.iv_mine_user_photo);
+
         orderInfoTextView = root.findViewById(R.id.tv_order);
         messageInfoTextView = root.findViewById(R.id.tv_message);
         settingButton = root.findViewById(R.id.ib_start_setting);

@@ -8,6 +8,11 @@ import android.util.Log;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
+import com.wmpscc.refreshnewclothes.Bean.GlobalData;
+import com.wmpscc.refreshnewclothes.Bean.JSON_post_get_base_info;
 import com.wmpscc.refreshnewclothes.Bean.Json_base_info;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.CustomTabView.CustomTabView;
@@ -30,8 +35,14 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (new Json_base_info().getCilentID() == null){
-            startActivity(new Intent(this, DealListActivity.class));
+
+        if (GlobalData.sJSON_post_logon == null) {
+            startActivity(new Intent(this, LogonActivity.class));
+        }
+        try {
+            initFile();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         StaticData.fm = getSupportFragmentManager();
@@ -45,14 +56,27 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
 
     private void initFile() throws IOException {
         String baseInfoPath = "/base_info.txt";
-        String baseInfoJson = "";
+        String fileContent = "";
         FileOperate fileOperate = new FileOperate();
         if (fileOperate.hasFile(baseInfoPath)) {
-            baseInfoJson = fileOperate.readSDFile(baseInfoPath);
-            Log.e("content", baseInfoJson);
-            Json_base_info baseInfo = JSON.parseObject(baseInfoJson, Json_base_info.class);
-            Log.e("jsonread", baseInfo.getCilentID() + baseInfo.getUserName() + baseInfo.getPhotoUrl());
+            fileContent = fileOperate.readSDFile(baseInfoPath);
+            Json_base_info baseInfo = JSON.parseObject(fileContent, Json_base_info.class);
+            GlobalData.sJson_base_info = baseInfo;
+
         } else {
+//            JSON_post_get_base_info get_base_info = new JSON_post_get_base_info();
+//            get_base_info.setPhoneNumber("1234567890x");
+//            OkGo.<String>post(StaticData.testUrl)
+//                    .tag(this)
+//                    .params("object", "userbaseinfo")
+//                    .upString(JSON.toJSONString(get_base_info))
+//                    .execute(new StringCallback() {
+//                        @Override
+//                        public void onSuccess(Response<String> response) {
+//
+//                        }
+//                    });
+
             Json_base_info jsonBaseInfo = new Json_base_info();
             jsonBaseInfo.setCilentID("1234567890x");
             jsonBaseInfo.setPhotoUrl("http://p4sz2omtj.bkt.clouddn.com/FpLU3QJ5zSf9ktZv3yLvJQMoI-Ei");

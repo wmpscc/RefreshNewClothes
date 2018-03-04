@@ -12,4 +12,5 @@ public class StaticData {
     public static FragmentManager desigerFm;
     public static FragmentManager designerDealsFm;
     public static View mView;
+    public static String testUrl = "http://server.jeasonlzy.com/OkHttpUtils/uploadString";
 }

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.wmpscc.refreshnewclothes.Activity.SearchActivity;
+import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.TopBannerArray;
 import com.wmpscc.refreshnewclothes.Utils.GlideImageLoader;
 import com.wmpscc.refreshnewclothes.Item.BannerItem;
 import com.wmpscc.refreshnewclothes.R;
@@ -31,6 +32,7 @@ public class BannerItemViewBinder extends ItemViewBinder<BannerItem, BannerItemV
     private View root;
     private List<String> imgUrl = new ArrayList<>();
     private List<String> title = new ArrayList<>();
+    private List<TopBannerArray> mTopBannerArrays = new ArrayList<>();
 
     @NonNull
     @Override
@@ -41,6 +43,7 @@ public class BannerItemViewBinder extends ItemViewBinder<BannerItem, BannerItemV
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull BannerItem bannerItem) {
+        mTopBannerArrays = bannerItem.getTopBannerArray();
         initBanner();
         initView();
     }
@@ -55,19 +58,11 @@ public class BannerItemViewBinder extends ItemViewBinder<BannerItem, BannerItemV
     }
 
     private void initBanner(){
-        imgUrl.add("https://p1.pstatp.com/large/166200019850062839d3");
-        imgUrl.add("http://ox5bam95j.bkt.clouddn.com/banner01.jpg");
-        imgUrl.add("http://ox5bam95j.bkt.clouddn.com/banner02.jpg");
-        imgUrl.add("http://ox5bam95j.bkt.clouddn.com/banner03.jpg");
-        imgUrl.add("http://ox5bam95j.bkt.clouddn.com/banner04.jpg");
-        imgUrl.add("http://ox5bam95j.bkt.clouddn.com/banner05.jpg");
+        for (int i = 0; i < mTopBannerArrays.size(); i++) {
+            imgUrl.add(mTopBannerArrays.get(i).getImgUrl());
+            title.add(mTopBannerArrays.get(i).getTitle());
+        }
 
-        title.add("第一个标题描述");
-        title.add("第2个标题描述");
-        title.add("第3个标题描述");
-        title.add("第4个标题描述");
-        title.add("第5个标题描述");
-        title.add("第6个标题描述");
         mBanner = root.findViewById(R.id.home_pager_banner);
         //设置banner样式
         mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
@@ -82,7 +77,7 @@ public class BannerItemViewBinder extends ItemViewBinder<BannerItem, BannerItemV
         //设置自动轮播，默认为true
         mBanner.isAutoPlay(true);
         //设置轮播时间
-        mBanner.setDelayTime(1500);
+        mBanner.setDelayTime(2500);
         //设置指示器位置（当banner模式中有指示器时）
         mBanner.setIndicatorGravity(BannerConfig.RIGHT);
         //banner设置方法全部调用完毕时最后调用
