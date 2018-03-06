@@ -2,6 +2,7 @@ package com.wmpscc.refreshnewclothes.Binder;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,9 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import com.wmpscc.refreshnewclothes.Bean.SecondFragmentBean.JSON_second_fragment;
 import com.wmpscc.refreshnewclothes.Item.MessageFrameItem;
 import com.wmpscc.refreshnewclothes.R;
-import com.wmpscc.refreshnewclothes.Utils.MessageType;
 import com.zhy.autolayout.utils.AutoUtils;
+
+import java.util.Objects;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -64,17 +66,19 @@ public class MessageFrameItemViewBinder extends ItemViewBinder<MessageFrameItem,
         container.addView(cell);
         Glide.with(root.getContext()).load(mJSONSecondFragment.getUserPhotoUrl()).into(userPhotoImageView);
         userNameTextView.setText(mJSONSecondFragment.getUserName());
-        if (mJSONSecondFragment.getType() == "text") {
+        if (Objects.equals(mJSONSecondFragment.getType(), "text")) {
             TextView plainTextView = cell.findViewById(R.id.tv_plain_text_content);
-            plainTextView.setText(mJSONSecondFragment.getContent());
-        } else if (mJSONSecondFragment.getType() == "picture") {
+            plainTextView.setText(mJSONSecondFragment.getText());
+        } else if (Objects.equals(mJSONSecondFragment.getType(), "picture")) {
+            Log.e("glideImg", mJSONSecondFragment.getPicUrl());
             ImageView albumImageView = cell.findViewById(R.id.iv_message_album);
-            Glide.with(cell.getContext()).load(mJSONSecondFragment.getPicUrl()).into(albumImageView);
-        } else if (mJSONSecondFragment.getType() == "textPicture") {
+            Glide.with(root.getContext()).load(mJSONSecondFragment.getPicUrl()).into(albumImageView);
+
+        } else if (Objects.equals(mJSONSecondFragment.getType(), "textPicture")) {
             TextView tpTextView = cell.findViewById(R.id.tv_message_content);
             ImageView tpImageView = cell.findViewById(R.id.iv_message_image);
             tpTextView.setText(mJSONSecondFragment.getText());
-            Glide.with(cell.getContext()).load(mJSONSecondFragment.getPicUrl()).into(tpImageView);
+            Glide.with(root.getContext()).load(mJSONSecondFragment.getPicUrl()).into(tpImageView);
         }
 
     }

@@ -28,7 +28,7 @@ public class ExploreSecondFragment extends Fragment {
     private MultiTypeAdapter mAdapter;
     private Items mItems;
     private View mView;
-    private List<JSON_second_fragment> mJSONSecondFragments = new ArrayList<>();
+    private List<JSON_second_fragment> mJSONSecondFragments;
     public ExploreSecondFragment() {
         // Required empty public constructor
     }

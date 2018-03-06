@@ -3,6 +3,7 @@ package com.wmpscc.refreshnewclothes.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class ExploreFirstFragment extends Fragment {
     private MultiTypeAdapter mAdapter;
     private Items mItems;
     private View mView;
-    private List<JSON_second_fragment> mJSONSecondFragments = new ArrayList<>();
+    private List<JSON_second_fragment> mJSONSecondFragments;
 
 
     public ExploreFirstFragment() {
@@ -59,7 +60,7 @@ public class ExploreFirstFragment extends Fragment {
 
     private void analyzeJson() {
         mJSONSecondFragments = JSON.parseArray(SecondJsonContent.content, JSON_second_fragment.class);
-
+        Log.e("jsonArray", mJSONSecondFragments.size() + "");
     }
 
     private void initView() {

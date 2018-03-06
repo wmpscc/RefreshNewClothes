@@ -7,13 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.wmpscc.refreshnewclothes.Activity.DesignerInfoActivity;
+import com.wmpscc.refreshnewclothes.Bean.ThirdFragmentBean.JSON_third_fragment;
 import com.wmpscc.refreshnewclothes.Item.DesignerInfoCardItem;
 import com.wmpscc.refreshnewclothes.R;
 import com.zhy.autolayout.utils.AutoUtils;
+
+import org.w3c.dom.Text;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -22,7 +27,11 @@ import me.drakeet.multitype.ItemViewBinder;
  */
 public class DesignerInfoCardItemViewBinder extends ItemViewBinder<DesignerInfoCardItem, DesignerInfoCardItemViewBinder.ViewHolder> {
     private View root;
-    private ImageView mImageView;
+    private ImageView designerBackgroundImageView;
+    private JSON_third_fragment mJSONThirdFragment;
+    private TextView userNameTextView;
+    private TextView userTypeTextView;
+    private RoundedImageView userPhotoImageView;
 
 
     @NonNull
@@ -35,8 +44,12 @@ public class DesignerInfoCardItemViewBinder extends ItemViewBinder<DesignerInfoC
     }
 
     private void initView() {
-        mImageView = root.findViewById(R.id.iv_designer_card_photo);
-        mImageView.setOnClickListener(new View.OnClickListener() {
+        userNameTextView = root.findViewById(R.id.tv_designer_card_user_name);
+        userPhotoImageView = root.findViewById(R.id.iv_designer_card_user_photo);
+        userTypeTextView = root.findViewById(R.id.tv_designer_user_label);
+
+        designerBackgroundImageView = root.findViewById(R.id.iv_designer_card_photo);
+        designerBackgroundImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.iv_designer_card_photo)
@@ -49,15 +62,17 @@ public class DesignerInfoCardItemViewBinder extends ItemViewBinder<DesignerInfoC
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull DesignerInfoCardItem designerInfoCardItem) {
+        mJSONThirdFragment = designerInfoCardItem.getJSONThirdFragment();
         holder.setIsRecyclable(false);
         RequestOptions options = new RequestOptions();
         options.placeholder(R.drawable.ic_empty);
-
-
-        String longPic = "http://img5.mtime.cn/pi/2017/05/19/183505.69122615_1000X1000.jpg";
-        String widthPic = "http://img5.mtime.cn/pi/2018/01/02/094106.40699278_1000X1000.jpg";
-        String longlongPic = "http://img5.mtime.cn/pi/2018/01/30/101713.16222454_1000X1000.jpg";
-        Glide.with(root).load(widthPic).apply(options).into(mImageView);
+//        String longPic = "http://img5.mtime.cn/pi/2017/05/19/183505.69122615_1000X1000.jpg";
+//        String widthPic = "http://img5.mtime.cn/pi/2018/01/02/094106.40699278_1000X1000.jpg";
+//        String longlongPic = "http://img5.mtime.cn/pi/2018/01/30/101713.16222454_1000X1000.jpg";
+        userTypeTextView.setText(mJSONThirdFragment.getUserType());
+        userNameTextView.setText(mJSONThirdFragment.getUserName());
+        Glide.with(root).load(mJSONThirdFragment.getUserPhotoUrl()).into(userPhotoImageView);
+        Glide.with(root).load(mJSONThirdFragment.getBackgroundUrl()).apply(options).into(designerBackgroundImageView);
 
     }
 
