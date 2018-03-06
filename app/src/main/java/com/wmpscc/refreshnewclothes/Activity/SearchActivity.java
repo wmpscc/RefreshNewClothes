@@ -1,5 +1,6 @@
 package com.wmpscc.refreshnewclothes.Activity;
 
+import android.opengl.GLDebugHelper;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.fastjson.JSON;
+import com.wmpscc.refreshnewclothes.Bean.GlobalData;
 import com.wmpscc.refreshnewclothes.Bean.ThirdFragmentBean.JSON_third_fragment;
 import com.wmpscc.refreshnewclothes.Bean.ThirdFragmentBean.ThirdJsonContent;
 import com.wmpscc.refreshnewclothes.Binder.DesignerInfoCardItemViewBinder;
@@ -71,10 +73,10 @@ public class SearchActivity extends AppCompatActivity {
         mItems.add(new DesignerTransationInfoItem());
 
         mItems.add(new Label("作品"));
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
+        mItems.add(new DesignerSelfGoodsItem(GlobalData.sCommodityArrays.get(0)));
+        mItems.add(new DesignerSelfGoodsItem(GlobalData.sCommodityArrays.get(1)));
+        mItems.add(new DesignerSelfGoodsItem(GlobalData.sCommodityArrays.get(2)));
+        mItems.add(new DesignerSelfGoodsItem(GlobalData.sCommodityArrays.get(3)));
 
         mAdapter.setItems(mItems);
         mAdapter.notifyDataSetChanged();

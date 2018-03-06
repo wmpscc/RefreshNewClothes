@@ -47,16 +47,8 @@ public class DesignerInfoCardItemViewBinder extends ItemViewBinder<DesignerInfoC
         userNameTextView = root.findViewById(R.id.tv_designer_card_user_name);
         userPhotoImageView = root.findViewById(R.id.iv_designer_card_user_photo);
         userTypeTextView = root.findViewById(R.id.tv_designer_user_label);
-
         designerBackgroundImageView = root.findViewById(R.id.iv_designer_card_photo);
-        designerBackgroundImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view.getId() == R.id.iv_designer_card_photo)
-                    root.getContext().startActivity(new Intent(root.getContext(), DesignerInfoActivity.class));
 
-            }
-        });
     }
 
 
@@ -73,8 +65,27 @@ public class DesignerInfoCardItemViewBinder extends ItemViewBinder<DesignerInfoC
         userNameTextView.setText(mJSONThirdFragment.getUserName());
         Glide.with(root).load(mJSONThirdFragment.getUserPhotoUrl()).into(userPhotoImageView);
         Glide.with(root).load(mJSONThirdFragment.getBackgroundUrl()).apply(options).into(designerBackgroundImageView);
-
+        action();
     }
+    private void action(){
+        final Intent intent = new Intent(root.getContext(), DesignerInfoActivity.class);
+        intent.putExtra("PhoneNumber", mJSONThirdFragment.getPhoneNumber());
+        intent.putExtra("userName", mJSONThirdFragment.getUserName());
+        intent.putExtra("userType", mJSONThirdFragment.getUserType());
+        intent.putExtra("backgroundUrl", mJSONThirdFragment.getBackgroundUrl());
+        intent.putExtra("userPhotoUrl", mJSONThirdFragment.getUserPhotoUrl());
+
+        designerBackgroundImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == R.id.iv_designer_card_photo)
+                    root.getContext().startActivity(intent);
+//                    root.getContext().startActivity(new Intent(root.getContext(), DesignerInfoActivity.class));
+
+            }
+        });
+    }
+
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 

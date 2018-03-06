@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wmpscc.refreshnewclothes.Bean.GlobalData;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.Item.DesignerSelfGoodsItem;
 import com.wmpscc.refreshnewclothes.Binder.DesignerSelfGoodsItemViewBinder;
@@ -65,30 +66,9 @@ public class DesignerBelowRightFragment extends Fragment {
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter.register(DesignerSelfGoodsItem.class, new DesignerSelfGoodsItemViewBinder());
         mRecyclerView.setAdapter(mAdapter);
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
-        mItems.add(new DesignerSelfGoodsItem());
+        for (int i = 0; i < GlobalData.sCommodityArrays.size(); i++) {
+            mItems.add(new DesignerSelfGoodsItem(GlobalData.sCommodityArrays.get(i)));
+        }
 
         mAdapter.setItems(mItems);
         mAdapter.notifyDataSetChanged();

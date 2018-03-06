@@ -1,5 +1,6 @@
 package com.wmpscc.refreshnewclothes.Binder;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.wmpscc.refreshnewclothes.Activity.CommodityDetailsActivity;
+import com.wmpscc.refreshnewclothes.AutoCardView;
 import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.CommodityArray;
 import com.wmpscc.refreshnewclothes.Item.GalleryCommodityItem;
 import com.wmpscc.refreshnewclothes.R;
@@ -28,6 +31,7 @@ public class GalleryCommodityItemViewBinder extends ItemViewBinder<GalleryCommod
     private TextView nameTextView;
     private RoundedImageView userPhotoImageView;
     private View root;
+    private AutoCardView mAutoCardView;
 
     @NonNull
     @Override
@@ -40,6 +44,9 @@ public class GalleryCommodityItemViewBinder extends ItemViewBinder<GalleryCommod
         commoImageView = root.findViewById(R.id.iv_commodity_picture);
         nameTextView = root.findViewById(R.id.tv_commodity_name);
         userPhotoImageView = root.findViewById(R.id.iv_commodity_designer_photo);
+        mAutoCardView = root.findViewById(R.id.card_commodity);
+
+
     }
 
     @Override
@@ -47,11 +54,23 @@ public class GalleryCommodityItemViewBinder extends ItemViewBinder<GalleryCommod
         mCommodityArray = galleryCommodityItem.getCommodityArray();
 
         creatView();
+        openDetails();
+    }
+
+    private void openDetails(){
+        final Intent intent = new Intent(root.getContext(), CommodityDetailsActivity.class);
+        intent.putExtra("imgUrl", mCommodityArray.getImgUrl());
+        mAutoCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                root.getContext().startActivity(intent);
+            }
+        });
     }
 
     private void creatView(){
         nameTextView.setText(mCommodityArray.getItemName());
-        Glide.with(root.getContext()).load(mCommodityArray.getImgUrl()).into(commoImageView);
+        Glide.with(root.getContext()).load(mCommodityArray.getMiniImgUrl()).into(commoImageView);
         Glide.with(root.getContext()).load(mCommodityArray.getUserPhotoUrl()).into(userPhotoImageView);
     }
 

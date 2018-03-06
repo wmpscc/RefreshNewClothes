@@ -14,6 +14,9 @@ import android.view.MotionEvent;
 public class AvoidRVTouchClash extends RecyclerView {
     private int fPos = 0;
     private int ePos = 0;
+    private int last = 0;
+    private int dy = 0;
+
     public AvoidRVTouchClash(Context context) {
         super(context);
     }
@@ -25,22 +28,24 @@ public class AvoidRVTouchClash extends RecyclerView {
     public AvoidRVTouchClash(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
-    public void setVisibleItemPos(int fPos, int ePos){
+
+    public void setVisibleItemPos(int fPos, int ePos, int dy) {
         this.fPos = fPos;
         this.ePos = ePos;
+        this.dy = Math.abs(dy);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent e) {
         boolean intercept = false;
-        if (e.getAction() == MotionEvent.ACTION_MOVE){
-            if (fPos == 2){
+        if (e.getAction() == MotionEvent.ACTION_MOVE) {
+            if (ePos == 2 && fPos == 2) {
                 intercept = false;
-            }
-            else {
+            } else if (dy > 80 || dy == last) {
+                intercept = true;
+            } else {
                 intercept = true;
             }
-
         }
         return intercept;
     }

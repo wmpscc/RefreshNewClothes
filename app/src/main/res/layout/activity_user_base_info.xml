@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wmpscc.refreshnewclothes.UserBaseInfoActivity">
+    tools:context="com.wmpscc.refreshnewclothes.Activity.UserBaseInfoActivity">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/layout04"
@@ -14,6 +14,7 @@
         android:background="#ffffff">
 
         <ImageView
+            android:id="@+id/iv_edit_base_info_finish"
             android:layout_width="25dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"

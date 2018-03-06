@@ -9,10 +9,11 @@
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/layout03"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:background="#ffffff">
 
         <ImageView
+            android:id="@+id/iv_message_list_finish"
             android:layout_width="25dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"

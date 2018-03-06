@@ -16,6 +16,7 @@ import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.JSON_first_fragment;
 import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.RecommendMessageArray;
 import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.TopBannerArray;
 import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.TradeShowArray;
+import com.wmpscc.refreshnewclothes.Bean.GlobalData;
 import com.wmpscc.refreshnewclothes.Binder.DesignerTransationInfoItemViewBinder;
 import com.wmpscc.refreshnewclothes.Item.DesignerTransationInfoItem;
 import com.wmpscc.refreshnewclothes.Item.GalleryItem;
@@ -84,6 +85,7 @@ public class HomeFragment extends Fragment {
         mRecommendMessageArray = mJSONFirstFragment.getRecommendMessage();
         mTopBannerArray = mJSONFirstFragment.getTopBanner();
         mTradeShowArray = mJSONFirstFragment.getTradeShow();
+        GlobalData.sCommodityArrays = mCommodityArray;
 
 
     }

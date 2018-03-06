@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
+        android:name=".ChatKitApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -49,7 +50,7 @@
         </activity>
         <activity android:name=".Activity.CommodityDetailsActivity">
         </activity>
-        <activity android:name=".UserBaseInfoActivity">
+        <activity android:name=".Activity.UserBaseInfoActivity">
         </activity>
         <activity android:name=".Activity.LoginActivity">
         </activity>

@@ -8,6 +8,15 @@ public class CommodityArray {
     private String itemName;
     private String phoneName;
     private String userPhotoUrl;
+    private String miniImgUrl;
+
+    public String getMiniImgUrl() {
+        return miniImgUrl;
+    }
+
+    public void setMiniImgUrl(String miniImgUrl) {
+        this.miniImgUrl = miniImgUrl;
+    }
 
     public String getUserPhotoUrl() {
         return userPhotoUrl;

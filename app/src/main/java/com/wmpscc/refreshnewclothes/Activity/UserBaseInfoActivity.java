@@ -1,4 +1,4 @@
-package com.wmpscc.refreshnewclothes;
+package com.wmpscc.refreshnewclothes.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import com.qiniu.android.storage.Configuration;
 import com.qiniu.android.storage.UpCompletionHandler;
 import com.qiniu.android.storage.UploadManager;
 import com.qiniu.util.Auth;
+import com.wmpscc.refreshnewclothes.R;
 import com.yuyh.library.imgsel.ISNav;
 import com.yuyh.library.imgsel.bean.Image;
 import com.yuyh.library.imgsel.common.ImageLoader;
@@ -33,6 +34,7 @@ public class UserBaseInfoActivity extends AppCompatActivity {
     private static final int REQUEST_CAMERA_CODE = 1;
     private static final int REQUEST_SINGLE_CODE = 2;
     private UploadManager uploadManager;
+    private ImageView finishUserBaseInfoImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,13 @@ public class UserBaseInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 singleSelect();
+            }
+        });
+        finishUserBaseInfoImageView = findViewById(R.id.iv_edit_base_info_finish);
+        finishUserBaseInfoImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

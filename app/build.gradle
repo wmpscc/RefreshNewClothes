@@ -35,6 +35,9 @@ dependencies {
     implementation 'com.qiniu:qiniu-java-sdk:7.1.+'
     implementation 'com.alibaba:fastjson:1.1.68.android'
 }
+
+
+
 dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     implementation project(':library') // 图片选择器
@@ -176,4 +179,31 @@ dependencies {
 }
 dependencies {
     implementation 'com.hymane.expandtextview:library:1.0.2'
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+
+android {
+    //为了解决部分第三方库重复打包了META-INF的问题
+    packagingOptions{
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile ('cn.leancloud.android:chatkit:1.0.6')
+    compile ('com.android.support:support-v4:21.0.3')
+
+    // LeanCloud 基础包
+    compile ('cn.leancloud.android:avoscloud-sdk:v4.6.4')
+
+    // 推送与实时聊天需要的包
+    compile ('cn.leancloud.android:avoscloud-push:v4.6.4@aar'){transitive = true}
+
 }

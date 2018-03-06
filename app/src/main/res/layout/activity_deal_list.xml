@@ -10,10 +10,11 @@
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/layout01"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:background="#ffffff">
 
         <ImageView
+            android:id="@+id/iv_deal_list_finish"
             android:layout_width="25dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"

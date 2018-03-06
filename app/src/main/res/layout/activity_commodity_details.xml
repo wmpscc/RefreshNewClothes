@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/label_01"
             android:scaleType="fitStart"
+            android:adjustViewBounds="true"
             android:src="@drawable/ic_big_picture"/>
     </com.zhy.autolayout.AutoRelativeLayout>
 

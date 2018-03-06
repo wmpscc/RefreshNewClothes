@@ -17,6 +17,8 @@ import com.wmpscc.refreshnewclothes.Item.DesignerInfoDescribeItem;
 import com.wmpscc.refreshnewclothes.Item.DesignerInfoTopItem;
 import com.wmpscc.refreshnewclothes.R;
 
+import java.util.logging.StreamHandler;
+
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
 
@@ -29,6 +31,11 @@ public class DesignerInfoActivity extends AppCompatActivity {
     private LinearLayoutManager mLinearLayoutManager;
     private LinearLayoutManager itemManager;
     private RecyclerView rvItem;
+    private String userName;
+    private String userType;
+    private String backgroundUrl;
+    private String userPhotoUrl;
+    private String PhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +43,17 @@ public class DesignerInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_designer_info);
         StaticData.desigerFm = getSupportFragmentManager();
 
+        initParame();
         initView();
         initRecycleItem();
+
+    }
+    private void initParame(){
+        userName = getIntent().getStringExtra("userName");
+        backgroundUrl = getIntent().getStringExtra("backgroundUrl");
+        userPhotoUrl = getIntent().getStringExtra("userPhotoUrl");
+        PhoneNumber = getIntent().getStringExtra("PhoneNumber");
+        userType = getIntent().getStringExtra("userType");
 
     }
 
@@ -50,8 +66,8 @@ public class DesignerInfoActivity extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
                 int fPos = mLinearLayoutManager.findFirstVisibleItemPosition();
                 int lPos = mLinearLayoutManager.findLastVisibleItemPosition();
-                mRecyclerView.setVisibleItemPos(fPos, lPos);
-                Log.e("rvPos", "fPos:" + fPos + "lPos" + lPos);
+                mRecyclerView.setVisibleItemPos(fPos, lPos, dy);
+                Log.e("rvPos", "fPos:" + fPos +"  "+ "lPos" + lPos + "  " + dy);
             }
         });
 
@@ -73,7 +89,7 @@ public class DesignerInfoActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         mItems = new Items();
-        mItems.add(new DesignerInfoTopItem());
+        mItems.add(new DesignerInfoTopItem(userName, userType, backgroundUrl, userPhotoUrl, PhoneNumber));
         mItems.add(new DesignerInfoDescribeItem());
         mItems.add(new DesignerInfoBelowItem());
 

@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.wmpscc.refreshnewclothes.Activity.CommodityDetailsActivity;
+import com.wmpscc.refreshnewclothes.Bean.FirstFragmentBean.CommodityArray;
 import com.wmpscc.refreshnewclothes.Item.DesignerSelfGoodsItem;
 import com.wmpscc.refreshnewclothes.R;
 
@@ -20,6 +22,7 @@ import me.drakeet.multitype.ItemViewBinder;
 public class DesignerSelfGoodsItemViewBinder extends ItemViewBinder<DesignerSelfGoodsItem, DesignerSelfGoodsItemViewBinder.ViewHolder> {
     private ImageView mImageView;
     private View root;
+    private CommodityArray mCommodityArray;
 
     @NonNull
     @Override
@@ -31,18 +34,21 @@ public class DesignerSelfGoodsItemViewBinder extends ItemViewBinder<DesignerSelf
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull DesignerSelfGoodsItem designerSelfGoodsItem) {
+        mCommodityArray = designerSelfGoodsItem.getCommodityArray();
+        Glide.with(root.getContext()).load(mCommodityArray.getMiniImgUrl()).into(mImageView);
 
-    }
-    private void initView(){
-        mImageView = root.findViewById(R.id.iv_designer_self_good);
+        final Intent intent = new Intent(root.getContext(), CommodityDetailsActivity.class);
+        intent.putExtra("imgUrl", mCommodityArray.getImgUrl());
         mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                root.getContext().startActivity(new Intent(root.getContext(), CommodityDetailsActivity.class));
-
+                root.getContext().startActivity(new Intent(intent));
             }
         });
+    }
 
+    private void initView() {
+        mImageView = root.findViewById(R.id.iv_designer_self_good);
     }
 
 

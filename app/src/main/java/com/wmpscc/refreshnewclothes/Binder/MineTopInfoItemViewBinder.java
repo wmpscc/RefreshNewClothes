@@ -1,7 +1,6 @@
 package com.wmpscc.refreshnewclothes.Binder;
 
 import android.content.Intent;
-import android.support.annotation.BoolRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,7 +17,7 @@ import com.wmpscc.refreshnewclothes.Item.MineTopInfoItem;
 import com.wmpscc.refreshnewclothes.Activity.MessageListActivity;
 import com.wmpscc.refreshnewclothes.R;
 import com.wmpscc.refreshnewclothes.Activity.SettingActivity;
-import com.wmpscc.refreshnewclothes.UserBaseInfoActivity;
+import com.wmpscc.refreshnewclothes.Activity.UserBaseInfoActivity;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import me.drakeet.multitype.ItemViewBinder;
