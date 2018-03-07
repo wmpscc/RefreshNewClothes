@@ -11,6 +11,7 @@ import com.wmpscc.refreshnewclothes.Bean.MessageCell;
 import com.wmpscc.refreshnewclothes.Item.MessageListItem;
 import com.wmpscc.refreshnewclothes.Binder.MessageListItemViewBinder;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -25,6 +26,8 @@ public class MessageListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_list);
+        PermisionUtils.verifyStoragePermissions(this);
+
         initRecyclerView();
         finishImageView = findViewById(R.id.iv_message_list_finish);
         finishImageView.setOnClickListener(new View.OnClickListener() {

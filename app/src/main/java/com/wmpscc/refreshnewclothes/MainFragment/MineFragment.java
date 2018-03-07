@@ -60,6 +60,7 @@ public class MineFragment extends Fragment {
 
         mItems = new Items();
         mItems.add(new MineTopInfoItem());
+        mItems.add(new MineMenuDetailItem(R.drawable.ic_add_clothes, "发布需求"));
         mItems.add(new MineMenuDetailItem(R.drawable.ic_my_focus, "我的关注"));
         mItems.add(new MineMenuDetailItem(R.drawable.ic_collect, "我的收藏"));
         mItems.add(new MineMenuDetailItem(R.drawable.ic_feedback, "用户反馈"));

@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class DesignerFragment extends Fragment {
+public class DesignerFragment extends Fragment{
     private View mView;
     private List<String> titles = new ArrayList<>();
     private ViewPager mViewPager;

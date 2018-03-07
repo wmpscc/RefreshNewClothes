@@ -117,6 +117,7 @@ public class HomeFragment extends Fragment {
         for (int i = 1; i < mTradeShowArray.size(); i++) {
             mItems.add(new ShowDealsItem(mTradeShowArray.get(i)));
         }
+        mItems.add(new Label("推荐文章"));
 
         for (int i = 0; i < mRecommendMessageArray.size(); i++) {
             mItems.add(new RecomNewsItem(mRecommendMessageArray.get(i)));

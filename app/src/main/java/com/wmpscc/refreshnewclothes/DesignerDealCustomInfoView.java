@@ -24,13 +24,15 @@ public class DesignerDealCustomInfoView extends RelativeLayout {
     private ImageView dealPhoto;
     private int order;   // 0=>改造前; 1=>改造后
     private String type;
-    private String url;
+    private String imgUrl;
+
+
     public DesignerDealCustomInfoView(DesignerDealViewData data) {
         super(data.context);
         mViewData = data;
         order = mViewData.order;
         type = mViewData.type;
-        url = mViewData.url;
+        imgUrl = mViewData.imgUrl;
         initView(data.context);
         initTextView();
         initImageView();
@@ -59,7 +61,7 @@ public class DesignerDealCustomInfoView extends RelativeLayout {
         centTextView.setText(type);
     }
     private void initImageView(){
-        Glide.with(mView).load(url).into(dealPhoto);
+        Glide.with(mView).load(imgUrl).into(dealPhoto);
     }
 
 }

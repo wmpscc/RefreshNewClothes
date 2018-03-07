@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.fastjson.JSON;
+import com.wmpscc.refreshnewclothes.Bean.DealJSONList.DealJsonContent;
+import com.wmpscc.refreshnewclothes.Bean.DealJSONList.JSON_deal_list;
 import com.wmpscc.refreshnewclothes.Bean.GlobalData;
 import com.wmpscc.refreshnewclothes.Bean.ThirdFragmentBean.JSON_third_fragment;
 import com.wmpscc.refreshnewclothes.Bean.ThirdFragmentBean.ThirdJsonContent;
@@ -21,6 +23,7 @@ import com.wmpscc.refreshnewclothes.Item.DesignerSelfGoodsItem;
 import com.wmpscc.refreshnewclothes.Item.DesignerTransationInfoItem;
 import com.wmpscc.refreshnewclothes.Item.Label;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,17 +38,21 @@ public class SearchActivity extends AppCompatActivity {
     private EditText mEditText;
     private Button mButton;
     private List<JSON_third_fragment> mJSONThirdFragments = new ArrayList<>();
+    private List<JSON_deal_list> mJSONDealLists = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        PermisionUtils.verifyStoragePermissions(this);
+
         analyzeJson();
         initView();
         initRecyclerView();
     }
     private void analyzeJson(){
         mJSONThirdFragments = JSON.parseArray(ThirdJsonContent.content, JSON_third_fragment.class);
+        mJSONDealLists = JSON.parseArray(DealJsonContent.content, JSON_deal_list.class);
     }
 
     private void initView(){
@@ -68,9 +75,9 @@ public class SearchActivity extends AppCompatActivity {
         mItems.add(new DesignerInfoCardItem(mJSONThirdFragments.get(1)));
 
         mItems.add(new Label("改造"));
-        mItems.add(new DesignerTransationInfoItem());
-        mItems.add(new DesignerTransationInfoItem());
-        mItems.add(new DesignerTransationInfoItem());
+        for (int i = 0; i < 3; i++) {
+            mItems.add(new DesignerTransationInfoItem(mJSONDealLists.get(i)));
+        }
 
         mItems.add(new Label("作品"));
         mItems.add(new DesignerSelfGoodsItem(GlobalData.sCommodityArrays.get(0)));

@@ -16,6 +16,7 @@ import com.wmpscc.refreshnewclothes.Item.DesignerInfoBelowItem;
 import com.wmpscc.refreshnewclothes.Item.DesignerInfoDescribeItem;
 import com.wmpscc.refreshnewclothes.Item.DesignerInfoTopItem;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 import java.util.logging.StreamHandler;
 
@@ -41,6 +42,8 @@ public class DesignerInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_designer_info);
+        PermisionUtils.verifyStoragePermissions(this);
+
         StaticData.desigerFm = getSupportFragmentManager();
 
         initParame();

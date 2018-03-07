@@ -22,6 +22,7 @@ import com.wmpscc.refreshnewclothes.MainFragment.HomeFragment;
 import com.wmpscc.refreshnewclothes.MainFragment.MineFragment;
 import com.wmpscc.refreshnewclothes.R;
 import com.wmpscc.refreshnewclothes.Utils.FileOperate;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,10 +32,12 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     private CustomTabView mCustomTabView;
     private List<Fragment> mFragments = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PermisionUtils.verifyStoragePermissions(this);
 
         if (GlobalData.sJSON_post_logon == null) {
             startActivity(new Intent(this, LogonActivity.class));

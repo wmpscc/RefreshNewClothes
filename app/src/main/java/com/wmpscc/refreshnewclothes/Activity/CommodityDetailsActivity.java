@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.wmpscc.refreshnewclothes.AdImageView;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 import com.yuyh.library.imgsel.bean.Image;
 
 public class CommodityDetailsActivity extends AppCompatActivity {
@@ -18,6 +19,8 @@ public class CommodityDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commodity_details);
+        PermisionUtils.verifyStoragePermissions(this);
+
         dueIntent();
         initView();
         refreshView();

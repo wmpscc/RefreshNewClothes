@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorOrange">
+    android:background="@color/colorOrange"
+    android:layout_marginBottom="10dp">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/iv_mine_user_photo"
@@ -23,8 +24,8 @@
         android:id="@+id/tv_mine_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150px"
         android:layout_marginLeft="20px"
+        android:layout_marginTop="150px"
         android:layout_toRightOf="@+id/iv_mine_user_photo"
         android:text="isMyName"
         android:textColor="#ffffff"
@@ -67,83 +68,90 @@
 
     <ImageView
         android:id="@+id/iv_order"
+        android:layout_width="28dp"
+        android:layout_height="33dp"
+        android:layout_below="@+id/iv_mine_user_photo"
         android:layout_marginLeft="80px"
         android:layout_marginTop="50px"
         android:scaleType="centerCrop"
-        android:layout_below="@+id/iv_mine_user_photo"
-        android:src="@drawable/ic_order"
-        android:layout_width="28dp"
-        android:layout_height="33dp"/>
+        android:src="@drawable/ic_order"/>
 
     <TextView
         android:id="@+id/tv_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/iv_order"
         android:layout_marginBottom="15px"
         android:layout_marginLeft="10px"
         android:layout_toRightOf="@+id/iv_order"
         android:alpha="0.8"
-        android:textColor="#ffffff"
         android:text="订单信息"
-        android:textSize="17sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="#ffffff"
+        android:textSize="17sp"/>
+
     <View
-        android:layout_marginLeft="60px"
-        android:layout_marginBottom="8px"
-        android:layout_toRightOf="@+id/tv_order"
-        android:layout_alignBottom="@+id/iv_order"
-        android:alpha="0.5"
-        android:background="#ffffff"
         android:layout_width="1dp"
-        android:layout_height="29dp"/>
+        android:layout_height="29dp"
+        android:layout_alignBottom="@+id/iv_order"
+        android:layout_marginBottom="8px"
+        android:layout_marginLeft="60px"
+        android:layout_toRightOf="@+id/tv_order"
+        android:alpha="0.5"
+        android:background="#ffffff"/>
+
     <ImageView
         android:id="@+id/iv_message"
-        android:src="@drawable/ic_message"
-        android:scaleType="centerCrop"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_alignBottom="@+id/iv_order"
-        android:layout_marginLeft="440px"/>
+        android:layout_marginLeft="440px"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_message"/>
+
     <TextView
         android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_order"
+        android:layout_marginBottom="10px"
         android:layout_marginLeft="20px"
         android:layout_toRightOf="@+id/iv_message"
-        android:layout_marginBottom="10px"
-        android:layout_alignBottom="@+id/iv_order"
         android:alpha="0.8"
-        android:textColor="#ffffff"
-        android:textSize="17sp"
         android:text="消息"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="#ffffff"
+        android:textSize="17sp"/>
+
     <View
-        android:layout_marginLeft="40px"
-        android:layout_marginBottom="8px"
-        android:layout_toRightOf="@+id/tv_message"
-        android:layout_alignBottom="@+id/iv_order"
-        android:alpha="0.5"
-        android:background="#ffffff"
         android:layout_width="1dp"
-        android:layout_height="29dp"/>
+        android:layout_height="29dp"
+        android:layout_alignBottom="@+id/iv_order"
+        android:layout_marginBottom="8px"
+        android:layout_marginLeft="40px"
+        android:layout_toRightOf="@+id/tv_message"
+        android:alpha="0.5"
+        android:background="#ffffff"/>
+
     <ImageView
-        android:id="@+id/iv_delivery"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_delivery"
+        android:id="@+id/iv_designerWindows"
         android:layout_width="33dp"
         android:layout_height="30dp"
         android:layout_alignBottom="@+id/iv_order"
         android:layout_marginBottom="8px"
-        android:layout_marginLeft="730px"/>
+        android:layout_marginLeft="730px"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_designer_windows"/>
+
     <TextView
-        android:layout_toRightOf="@+id/iv_delivery"
+        android:id="@+id/tv_designerWindows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_order"
         android:layout_marginBottom="10px"
         android:layout_marginLeft="20px"
-        android:layout_alignBottom="@+id/iv_order"
+        android:layout_toRightOf="@+id/iv_designerWindows"
         android:alpha="0.8"
-        android:text="物流信息"
-        android:textSize="17sp"
+        android:text="我是设计师"
         android:textColor="#ffffff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textSize="17sp"/>
 
 </com.zhy.autolayout.AutoRelativeLayout>

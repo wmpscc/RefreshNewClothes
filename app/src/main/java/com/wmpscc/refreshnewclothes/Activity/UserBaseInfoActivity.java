@@ -17,6 +17,7 @@ import com.qiniu.android.storage.UpCompletionHandler;
 import com.qiniu.android.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 import com.yuyh.library.imgsel.ISNav;
 import com.yuyh.library.imgsel.bean.Image;
 import com.yuyh.library.imgsel.common.ImageLoader;
@@ -40,6 +41,8 @@ public class UserBaseInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_base_info);
+        PermisionUtils.verifyStoragePermissions(this);
+
         mUserPhotoImageView = findViewById(R.id.iv_base_user_photo);
         initUpFile();
         mUserPhotoImageView.setOnClickListener(new View.OnClickListener() {

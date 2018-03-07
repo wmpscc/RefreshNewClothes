@@ -57,7 +57,7 @@ public class DesignerInfoCardItemViewBinder extends ItemViewBinder<DesignerInfoC
         mJSONThirdFragment = designerInfoCardItem.getJSONThirdFragment();
         holder.setIsRecyclable(false);
         RequestOptions options = new RequestOptions();
-        options.placeholder(R.drawable.ic_empty);
+        options.placeholder(R.drawable.ic_empty_img);
 //        String longPic = "http://img5.mtime.cn/pi/2017/05/19/183505.69122615_1000X1000.jpg";
 //        String widthPic = "http://img5.mtime.cn/pi/2018/01/02/094106.40699278_1000X1000.jpg";
 //        String longlongPic = "http://img5.mtime.cn/pi/2018/01/30/101713.16222454_1000X1000.jpg";

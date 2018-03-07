@@ -18,7 +18,7 @@
             android:layout_height="300dp"
             android:scaleType="matrix"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_empty"/>
+            android:src="@drawable/ic_empty_img"/>
 <!--//300dp-->
         <View
             android:layout_width="match_parent"

@@ -30,6 +30,7 @@ public class LabelViewBinder extends ItemViewBinder<Label, LabelViewBinder.ViewH
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull Label label) {
+        holder.setIsRecyclable(false);
         mTextView = root.findViewById(R.id.label);
         mTextView.setText(label.title);
 

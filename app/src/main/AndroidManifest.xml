@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.wmpscc.refreshnewclothes">
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -14,9 +13,9 @@
     <application
         android:name=".ChatKitApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".Activity.MainActivity">
@@ -55,6 +54,8 @@
         <activity android:name=".Activity.LoginActivity">
         </activity>
         <activity android:name=".Activity.LogonActivity">
+        </activity>
+        <activity android:name=".Activity.DesignerWindowsActivity">
         </activity>
     </application>
 

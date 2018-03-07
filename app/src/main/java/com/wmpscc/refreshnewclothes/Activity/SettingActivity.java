@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 public class SettingActivity extends AppCompatActivity {
     private ImageView finishImageView;
@@ -13,6 +14,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        PermisionUtils.verifyStoragePermissions(this);
 
         finishImageView = findViewById(R.id.iv_setting_finish);
         finishImageView.setOnClickListener(new View.OnClickListener() {

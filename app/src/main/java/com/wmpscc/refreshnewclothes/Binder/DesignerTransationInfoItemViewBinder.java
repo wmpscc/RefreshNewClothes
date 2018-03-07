@@ -19,6 +19,7 @@ import com.wmpscc.refreshnewclothes.Adapter.DealsViewPagerAdapter;
 import com.wmpscc.refreshnewclothes.Adapter.MagicPagerAdapter;
 import com.wmpscc.refreshnewclothes.Adapter.ShowDealsViewPagerAdapter;
 import com.wmpscc.refreshnewclothes.Adapter.ViewPagerAdapter;
+import com.wmpscc.refreshnewclothes.Bean.DealJSONList.JSON_deal_list;
 import com.wmpscc.refreshnewclothes.Bean.DesignerDealViewData;
 import com.wmpscc.refreshnewclothes.Bean.StaticData;
 import com.wmpscc.refreshnewclothes.DesignerDealCustomInfoView;
@@ -45,32 +46,34 @@ public class DesignerTransationInfoItemViewBinder extends ItemViewBinder<Designe
     private View root;
     private ViewPager mViewPager;
     private ViewPagerAdapter mAdapter;
-    private String url = "http://img5.mtime.cn/mg/2018/02/22/150753.66998933.jpg";
     private String reformType = "长袖改为短袖";
     private FragmentManager mFragmentManager;
+    private JSON_deal_list mJSONDeal;
 
     @NonNull
     @Override
     protected ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
         root = inflater.inflate(R.layout.item_designer_transation_info_item, parent, false);
-        newInitView();
-        initMagicIndicator();
         return new ViewHolder(root);
     }
 
     private void newInitView() {
         mViewPager = root.findViewById(R.id.designer_deal_viewpager);
         mAdapter = new ViewPagerAdapter();
-        for (int i = 0; i < 2; i++) {
-            DesignerDealCustomInfoView view = new DesignerDealCustomInfoView(new DesignerDealViewData(root.getContext(), url, reformType, i));
-            mAdapter.addView(view);
-        }
+
+        DesignerDealCustomInfoView view = new DesignerDealCustomInfoView(new DesignerDealViewData(root.getContext(), reformType, 0, mJSONDeal.getBeforeUrl()));
+        mAdapter.addView(view);
+        view = new DesignerDealCustomInfoView(new DesignerDealViewData(root.getContext(), reformType, 1, mJSONDeal.getAfterUrl()));
+        mAdapter.addView(view);
 
         mViewPager.setAdapter(mAdapter);
     }
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull DesignerTransationInfoItem designerTransationInfoItem) {
+        mJSONDeal = designerTransationInfoItem.getJSONDeal();
+        newInitView();
+        initMagicIndicator();
 
     }
 

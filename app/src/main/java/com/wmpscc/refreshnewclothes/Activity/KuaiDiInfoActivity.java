@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 public class KuaiDiInfoActivity extends AppCompatActivity {
     private ImageView finishImageView;
@@ -14,6 +15,8 @@ public class KuaiDiInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kuai_di_info);
+        PermisionUtils.verifyStoragePermissions(this);
+
 
         finishImageView = findViewById(R.id.iv_kuaidi_list_finish);
         finishImageView.setOnClickListener(new View.OnClickListener() {

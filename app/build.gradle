@@ -7,9 +7,9 @@ android {
     defaultConfig {
         applicationId "com.wmpscc.refreshnewclothes"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -187,7 +187,7 @@ dependencies {
 
 android {
     //为了解决部分第三方库重复打包了META-INF的问题
-    packagingOptions{
+    packagingOptions {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
     }
@@ -197,13 +197,16 @@ android {
 }
 
 dependencies {
-    compile ('cn.leancloud.android:chatkit:1.0.6')
-    compile ('com.android.support:support-v4:21.0.3')
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
+    compile('cn.leancloud.android:chatkit:1.0.6')
+    compile('com.android.support:support-v4:21.0.3')
 
     // LeanCloud 基础包
-    compile ('cn.leancloud.android:avoscloud-sdk:v4.6.4')
+    compile('cn.leancloud.android:avoscloud-sdk:v4.6.4')
 
     // 推送与实时聊天需要的包
-    compile ('cn.leancloud.android:avoscloud-push:v4.6.4@aar'){transitive = true}
+    compile('cn.leancloud.android:avoscloud-push:v4.6.4@aar') { transitive = true }
 
 }

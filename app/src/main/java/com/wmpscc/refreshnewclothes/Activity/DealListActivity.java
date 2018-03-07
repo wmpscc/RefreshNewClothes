@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.wmpscc.refreshnewclothes.Binder.DealInfoItemViewBinder;
 import com.wmpscc.refreshnewclothes.Item.DealInfoItem;
 import com.wmpscc.refreshnewclothes.R;
+import com.wmpscc.refreshnewclothes.Utils.PermisionUtils;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -23,6 +24,8 @@ public class DealListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deal_list);
+        PermisionUtils.verifyStoragePermissions(this);
+
         mRecyclerView = findViewById(R.id.rv_deal_list);
         initRecyclerView();
         finishImageView = findViewById(R.id.iv_deal_list_finish);

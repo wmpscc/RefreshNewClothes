@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.wmpscc.refreshnewclothes.Activity.DealListActivity;
+import com.wmpscc.refreshnewclothes.Activity.DesignerWindowsActivity;
 import com.wmpscc.refreshnewclothes.Bean.GlobalData;
 import com.wmpscc.refreshnewclothes.Item.MineTopInfoItem;
 import com.wmpscc.refreshnewclothes.Activity.MessageListActivity;
@@ -34,6 +35,7 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
     private static View.OnClickListener mListener;
     private RoundedImageView userPhotoImageView;
     private TextView userNameTextView;
+    private TextView designerWindowsTextView;
 
     @NonNull
     @Override
@@ -57,7 +59,7 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
         messageInfoTextView = root.findViewById(R.id.tv_message);
         settingButton = root.findViewById(R.id.ib_start_setting);
         edBaseButton = root.findViewById(R.id.ib_edit_base_message);
-
+        designerWindowsTextView = root.findViewById(R.id.tv_designerWindows);
 
         mListener = new View.OnClickListener() {
             @Override
@@ -75,6 +77,9 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
                     case R.id.ib_edit_base_message:
                         root.getContext().startActivity(new Intent(root.getContext(), UserBaseInfoActivity.class));
                         break;
+                    case R.id.tv_designerWindows:
+                        root.getContext().startActivity(new Intent(root.getContext(), DesignerWindowsActivity.class));
+                        break;
                 }
             }
         };
@@ -82,6 +87,7 @@ public class MineTopInfoItemViewBinder extends ItemViewBinder<MineTopInfoItem, M
         messageInfoTextView.setOnClickListener(mListener);
         settingButton.setOnClickListener(mListener);
         edBaseButton.setOnClickListener(mListener);
+        designerWindowsTextView.setOnClickListener(mListener);
 
     }
 
